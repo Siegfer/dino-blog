@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Dino from './Dino'
+import Reptile from './Reptile'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+	let dino = {
+		title: 'Dinosaurs are aight',
+		author: 'Mcdonald Dinonuggets',
+		body: 'Something about Bodysaurus',
+		comments: ['Decent', 'I have seen worse tbh', 'Cheesegasaurus FTW!!']
+	}
+	let reptile = {
+		land: 'Snakegasaurus',
+		comments: ['Crocodilesaurus', 'Sharksaurus', 'Lobstersaurus']
+	}
+
+	return (
+		<div>
+			<Dino
+				title={dino.title}
+				author={dino.author}
+				body={dino.body}
+				comments={dino.comments}
+			/>
+			<Reptile land={reptile.land} comments={reptile.comments} />
+		</div>
+	)
 }
 
-export default App;
+export default App
