@@ -17,7 +17,13 @@ const Dino = (props) => {
 	})
 
 	// handleBodyEdit
-	const handelBodyEdit = () => {}
+	const handelBodyEdit = () => {
+		let input = prompt('What is the new edit for the Blog post')
+		console.log('🧚🏽‍♂️ --------------------------------------')
+		console.log('🧚🏽‍♂️ ~ handelBodyEdit ~ input', input)
+		console.log('🧚🏽‍♂️ --------------------------------------')
+		setState({ body: input })
+	}
 
 	//handleFormEdit
 	const handleFormEdit = (e) => {
@@ -44,6 +50,7 @@ const Dino = (props) => {
 			<Alert variant='success'>
 				<Alert.Heading>Blog Post</Alert.Heading>
 				<p>{state.body}</p>
+				<button onClick={handelBodyEdit}>Edit Post</button>
 				<hr />
 				<p className='mb-0'>Written by: {props.author}</p>
 			</Alert>
@@ -55,5 +62,4 @@ const Dino = (props) => {
 		</div>
 	)
 }
-
 export default Dino
